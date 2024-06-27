@@ -1,0 +1,21 @@
+syntax = "proto3";
+package books;
+
+option go_package = "github.com/dittrichlucas/poc-grpc-bookstore";
+
+// The book service definition.
+service Book {
+    // Get Book informations
+    rpc GetBook (Request) returns (Response) {}
+    // List Book informations
+    rpc ListBook (Request) returns (Response) {}
+}
+
+// The request message containing the book id.
+message Request {
+    string id = 1;
+}
+
+message Response {
+    string message = 1;
+}
